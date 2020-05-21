@@ -28,4 +28,4 @@ This will allow them to find deformities in that particular part of the bridge a
 - [time](https://docs.python.org/3/library/time.html?highlight=time#module-time)
 
 # Screenshots of GUI
-![BasicScreen](outputs/Basic Screen.png)
+![BasicScreen](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/Basic%20Screen.png)
