@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.labelFirstImage.setGeometry(QtCore.QRect(20, 380, 361, 271))
         self.labelFirstImage.setStyleSheet("background-color: #121212;border: 0.5px solid white;border-radius: 8px;")
         self.labelFirstImage.setText("")
-        self.labelFirstImage.setPixmap(QtGui.QPixmap("/Users/parthdoshi/Documents/Audio Processing/background.png"))
+        #self.labelFirstImage.setPixmap(QtGui.QPixmap(".../background.png"))
         self.labelFirstImage.setObjectName("labelFirstImage")
         self.pushButtonDisplayFirstSpectogram = QtWidgets.QPushButton(self.frameFirstFile)
         self.pushButtonDisplayFirstSpectogram.setGeometry(QtCore.QRect(50, 240, 301, 50))
@@ -140,7 +140,7 @@ class Ui_MainWindow(object):
         self.labelSecondImage.setGeometry(QtCore.QRect(20, 380, 361, 271))
         self.labelSecondImage.setStyleSheet("background-color: #121212;border: 0.5px solid white;border-radius: 8px;")
         self.labelSecondImage.setText("")
-        self.labelSecondImage.setPixmap(QtGui.QPixmap("/Users/parthdoshi/Documents/Audio Processing/background.png"))
+        #self.labelSecondImage.setPixmap(QtGui.QPixmap(".../background.png"))
         self.labelSecondImage.setObjectName("labelSecondImage")
         self.pushButtonDisplaySecondSpectogram = QtWidgets.QPushButton(self.frameSecondFile)
         self.pushButtonDisplaySecondSpectogram.setGeometry(QtCore.QRect(50, 240, 301, 50))
@@ -198,12 +198,6 @@ class Ui_MainWindow(object):
         self.pushButtonUpdateResult.setAutoFillBackground(False)
         self.pushButtonUpdateResult.setStyleSheet("background-color: #1f1a24;color: rgb(255, 255, 255);border: 0.5px solid white;border-radius: 5px;")
         self.pushButtonUpdateResult.setObjectName("pushButtonUpdateResult")
-#         self.labelResultImage = QtWidgets.QLabel(self.frameResult)
-#         self.labelResultImage.setGeometry(QtCore.QRect(20, 180, 361, 271))
-#         self.labelResultImage.setStyleSheet("background-color: #121212;border: 0.5px solid white;border-radius: 8px;")
-#         self.labelResultImage.setText("")
-#         self.labelResultImage.setPixmap(QtGui.QPixmap("/Users/parthdoshi/Documents/Audio Processing/background.png"))
-#         self.labelResultImage.setObjectName("labelResultImage")
         self.labelResultWindow = QtWidgets.QLabel(self.frameResult)
         self.labelResultWindow.setGeometry(QtCore.QRect(50, 470, 301, 91))
         self.labelResultWindow.setStyleSheet("background-color: #121212;border: 0.5px solid white;border-radius: 8px;")
@@ -256,7 +250,9 @@ class Ui_MainWindow(object):
         # ---------------------------------------------------------------------------------------------
 
     # --------------------------------------Button Functions--------------------------------------
-
+    
+    # Records initial Audio
+    
     def recordFirstAudio(self):
         print("Record First Audio")
         fs = 44100
@@ -264,10 +260,12 @@ class Ui_MainWindow(object):
         print('Recoding Now')
         myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=2)
         sd.wait()
-        write('output1.wav', fs, myrecording)
+        write('output1.wav', fs, myrecording) # Since you're writing the file you can name it anything (I've kept the name as output1
         print('Recoding Done')
         time.sleep(5)
-        
+    
+    # Records the new audio
+    
     def recordSecondAudio(self):
         print("Record Second Audio")
         fs = 44100
@@ -275,10 +273,12 @@ class Ui_MainWindow(object):
         print('Recoding Now')
         myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=2)
         sd.wait()
-        write('output2.wav', fs, myrecording)
+        write('output2.wav', fs, myrecording) # Since you're writing the file you can name it anything (I've kept the name as output2
         print('Recoding Done')
         time.sleep(5)
-
+    
+    # Playing the first audio
+    
     def playbackFirstAudio(self):
         print("Playback First Audio")
         filename = 'output1.wav'
@@ -286,16 +286,20 @@ class Ui_MainWindow(object):
         sd.play(data,fs)
         status = sd.wait()
 
+    # Playing the second audio
+    
     def playbackSecondAudio(self):
         print("Playback Second Audio")
         filename = 'output2.wav'
         data, fs = sf.read(filename, dtype='float32')
         sd.play(data,fs)
         status = sd.wait()
-
+    
+    # Displaying the first spectrogram
+    
     def displayFirstSpectogram(self):
         print("Display First Spectogram")
-        x,sr = librosa.load(r'C:\Users\Viraj\SoundAnalysis\output1.wav')
+        x,sr = librosa.load(r'...\output1.wav') # Your file location for the first audio file
         d = librosa.amplitude_to_db(np.abs(librosa.stft(x)), ref=np.max)
         n_fft = 1024
         hop_length = int(librosa.time_to_samples(1./200, sr=sr))
@@ -304,13 +308,13 @@ class Ui_MainWindow(object):
         librosa.display.specshow(librosa.power_to_db(S, ref=np.max),y_axis='mel',x_axis='time', sr=sr,hop_length=hop_length)
         plt.colorbar(format='%+2.0f dB')
         plt.savefig('audio1.png')
-        self.firstImage = r'C:\Users\Viraj\SoundAnalysis\audio1.png'
+        self.firstImage = r'...\audio1.png' # Location of the first spectrogram image file
         self.labelFirstImage.setPixmap(QtGui.QPixmap(self.firstImage).scaled(361,271))
         
 
     def displaySecondSpectogram(self):
         print("Display Second Spectogram")
-        y,sr = librosa.load(r'C:\Users\Viraj\SoundAnalysis\output2.wav')
+        y,sr = librosa.load(r'...\output2.wav') # Your file location for the second audio file
         d = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
         n_fft = 1024
         hop_length = int(librosa.time_to_samples(1./200, sr=sr))
@@ -319,13 +323,13 @@ class Ui_MainWindow(object):
         librosa.display.specshow(librosa.power_to_db(S, ref=np.max),y_axis='mel',x_axis='time', sr=sr,hop_length=hop_length)
         plt.colorbar(format='%+2.0f dB')
         plt.savefig('audio2.png')
-        self.secondImage = r'C:\Users\Viraj\SoundAnalysis\audio2.png'
+        self.secondImage = r'...\audio2.png' # Location of the second spectrogram image file
         self.labelSecondImage.setPixmap(QtGui.QPixmap(self.secondImage).scaled(361,271))
 
     def computeResult(self):
         print("Compute Result")
-        x,sr = librosa.load(r'C:\Users\Viraj\SoundAnalysis\output1.wav')
-        y,sr = librosa.load(r'C:\Users\Viraj\SoundAnalysis\output2.wav')
+        x,sr = librosa.load(r'...\output1.wav')
+        y,sr = librosa.load(r'...\output2.wav')
         p = np.split(x,10)
         q = np.split(y,10)
         i = []
