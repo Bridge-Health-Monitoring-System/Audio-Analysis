@@ -12,4 +12,17 @@ The authority overlooking the condition of the bridge will have the spectrogram 
 This will allow them to find deformities in that particular part of the bridge and take action</br>
 
 # Modules used
-- 
+- (librosa)[https://pypi.org/project/librosa/]
+- (PIL)[https://pypi.org/project/Pillow/]
+- (numpy)[https://pypi.org/project/numpy/]
+- (matplotlib)[https://pypi.org/project/matplotlib/]
+- (sounddevice)[https://pypi.org/project/sounddevice/]
+- (simpleaudio)[https://pypi.org/project/simpleaudio/]
+- (soundfile)[https://pypi.org/project/SoundFile/]
+- (scipy)[https://pypi.org/project/scipy/]
+- (playsound)[https://pypi.org/project/playsound/]
+- (firebase)[https://pypi.org/project/firebase/]
+- (PyQt5)[https://pypi.org/project/PyQt5/]
+- (stmplib)[https://docs.python.org/3/library/smtplib.html]
+- sys
+- time
