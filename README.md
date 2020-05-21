@@ -28,7 +28,15 @@ This will allow them to find deformities in that particular part of the bridge a
 - [time](https://docs.python.org/3/library/time.html?highlight=time#module-time)
 
 # Screenshots of GUI
+Basic Screen
 ![BasicScreen](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/Basic%20Screen.png)
+</br>
+First Spectrogram
 ![FirstSpectrogram](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/First%20Spectrogram.png)
+</br>
+Second Spectrogram
 ![SecondSpectrogram](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/Second%20Spectrogram.png)
+</br>
+Result
 ![Result](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/Result.png)
+</br>
