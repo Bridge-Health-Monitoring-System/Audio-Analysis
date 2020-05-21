@@ -24,5 +24,5 @@ This will allow them to find deformities in that particular part of the bridge a
 - [firebase](https://pypi.org/project/firebase/)
 - [PyQt5](https://pypi.org/project/PyQt5/)
 - [stmplib](https://docs.python.org/3/library/smtplib.html)
-- sys
-- time
+- [sys](https://docs.python.org/3/library/sys.html)
+- [time](https://docs.python.org/3/library/time.html?highlight=time#module-time)
