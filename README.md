@@ -29,3 +29,6 @@ This will allow them to find deformities in that particular part of the bridge a
 
 # Screenshots of GUI
 ![BasicScreen](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/Basic%20Screen.png)
+![FirstSpectrogram](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/First%20Spectrogram.png)
+![SecondSpectrogram](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/Second%20Spectrogram.png)
+![Result](https://github.com/Bridge-Health-Monitoring-System/Audio-Analysis/blob/master/outputs/Result.png)
