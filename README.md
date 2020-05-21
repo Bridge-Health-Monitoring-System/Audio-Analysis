@@ -26,3 +26,6 @@ This will allow them to find deformities in that particular part of the bridge a
 - [stmplib](https://docs.python.org/3/library/smtplib.html)
 - [sys](https://docs.python.org/3/library/sys.html)
 - [time](https://docs.python.org/3/library/time.html?highlight=time#module-time)
+
+# Screenshots of GUI
+![BasicScreen](outputs/Basic Screen.png)
