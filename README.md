@@ -3,6 +3,9 @@
 Audio Analysis using Python Module Librosa <br/>
 Audio Analysis to check for cracks and deformitites in solid surfaces by comparing audios of old and new audio analysis <br/>
 
+# Check out my article on Audio Analysis
+[Bridge Health Monitoring System using IoT](https://dev.to/virajvshetty/bridge-health-monitoring-system-using-iot-2cfc)
+
 # Description of Audio Analysis Module
 Librosa is a module in python used for Audio analysis and displaying different properties of an audio file.<br/>
 By using this Python based Librosa Module we’re analysing the audio produced by a hammer or a heavy object hitting the surface of the bridge.<br/>
